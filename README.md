@@ -33,7 +33,25 @@ Kasirin memastikan proses transaksi menjadi lebih cepat, mengurangi kesalahan ma
 ## Penjelasan 4 Pilar OOP dalam Studi Kasus
 ### 1. Inheritance
 ```java
+public abstract class dataUser {
+    protected int id_user;
+    protected String username;
+    protected String password;
+    protected String jabatan;
 
+    public dataUser(int id_user, String username, String password, String jabatan) {
+        this.id_user = id_user;
+        this.username = username;
+        this.password = password;
+        this.jabatan = jabatan;
+    }
+}
+
+public class dataAdmin extends dataUser {
+    public dataAdmin(int id_user, String username, String password) {
+        super(id_user, username, password, "admin");
+    }
+}
 ```
 
 ### 2. Encapsulation
@@ -65,11 +83,45 @@ public class dataBarang {
 
 ### 3. Polymorphism
 ```java
-
+public abstract class dataUser {
+    public abstract void displayRole();
+}
+public class dataAdmin extends dataUser {
+    @Override
+    public void displayRole() {
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle("User Role");
+    alert.setHeaderText("Role: " + jabatan);
+    alert.setContentText("Selamat Datang " + username + " dan Semangat Bekerja!");
+    alert.showAndWait();
+    }
+}
 ```
 
 ### 4. Abstract
 ```java
+public abstract class dataUser {
+    protected int id_user;
+    protected String username;
+    protected String password;
+    protected String jabatan;
+
+    public dataUser(int id_user, String username, String password, String jabatan) {
+        this.id_user = id_user;
+        this.username = username;
+        this.password = password;
+        this.jabatan = jabatan;
+    }
+
+    public int getIdUser() { return id_user; }
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
+    public String getJabatan() { return jabatan; }
+
+    public abstract void displayRole();
+}
 
 ```
 ## Struktur Tabel Aplikasi
@@ -102,7 +154,7 @@ public class dataBarang {
 - id_transaksi : int(3)
   
 ## Demo Aplikasi
-Clone: https://github.com/pnyabags/UAS_PBO1_223PB_Kelompok8.git
+Clone: [Github](https://github.com/pnyabags/UAS_PBO1_223PB_Kelompok8.git)
 
 Fakultas Industri Kreatif, Departemen Teknik Informatika,  
 Universitas Teknologi Bandung, 2025

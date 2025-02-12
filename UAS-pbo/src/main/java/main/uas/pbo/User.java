@@ -12,7 +12,6 @@ public class User {
         this.jabatan = jabatan;
     }
     public int getIdUser() { return id_user; }
-    public void setIdUser(int id_user) { this.id_user = id_user; }
 
     public String getUsername() { return username; }
     public void setUsername(String username) { this.username = username; }
@@ -21,5 +20,4 @@ public class User {
     public void setPassword(String password) { this.password = password; }
 
     public String getJabatan() { return jabatan; }
-    public void setJabatan(String jabatan) { this.jabatan = jabatan; }
 }

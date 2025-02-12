@@ -42,12 +42,12 @@
                         <Font size="16.0" />
                      </font>
                   </PasswordField>
-                  <Button mnemonicParsing="false" onAction="#pressLogin" text="Login">
+                  <Button mnemonicParsing="false" onAction="#pressLogin" style="-fx-background-color: #22c55e; -fx-border-color: black;" text="Login" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Label fx:id="messageLabel" textFill="red" >
+                  <Label fx:id="messageLabel" textFill="red">
                      <font>
                         <Font size="20.0" />
                      </font>

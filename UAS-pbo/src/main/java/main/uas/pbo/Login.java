@@ -24,10 +24,15 @@ public class Login{
 
         if (user != null) {
             SessionLogin session = new SessionLogin();
+            session.clearSession();
             session.setCurrentUser(user);
             messageLabel.setText("Login successful!");
             try {
-                App.setRoot("dashboard");
+                if(user.getJabatan().equalsIgnoreCase("admin")){
+                    App.setRoot("dashboard");
+                } else if (user.getJabatan().equalsIgnoreCase("staff")) {
+                    App.setRoot("transaksi");
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }

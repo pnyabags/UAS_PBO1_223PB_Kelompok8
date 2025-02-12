@@ -2,7 +2,10 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -10,91 +13,168 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: BCCCDC;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.uas.pbo.Dashboard">
    <children>
-      <ButtonBar layoutX="400.0" prefHeight="40.0" prefWidth="200.0" />
-      <BorderPane layoutX="120.0" prefHeight="45.0" prefWidth="480.0" style="-fx-background-color: yellow;" AnchorPane.bottomAnchor="555.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane layoutX="120.0" prefHeight="45.0" prefWidth="480.0" style="-fx-background-color: white; -fx-border-color: black;" AnchorPane.bottomAnchor="650.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <right>
-            <Button mnemonicParsing="false" text="Logout" BorderPane.alignment="CENTER" />
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#Logout" style="-fx-background-color: #dc3545; -fx-border-color: black;" text="Logout" textFill="WHITE" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
          </right>
          <padding>
             <Insets left="20.0" right="20.0" />
          </padding>
          <center>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Selamat Datang, Admin" BorderPane.alignment="CENTER">
+            <Label fx:id="welcomeLabel" text="Selamat Datang, Admin" BorderPane.alignment="CENTER">
                <font>
                   <Font size="16.0" />
                </font>
-            </Text>
+            </Label>
          </center>
       </BorderPane>
-      <VBox layoutX="130.0" layoutY="45.0" prefHeight="80.0" prefWidth="460.0" spacing="5.0" style="-fx-background-color: green;" AnchorPane.bottomAnchor="455.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="65.0">
+      <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="120.0" spacing="10.0" style="-fx-background-color: white; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1125.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Pendapatan yang didapat hari ini:">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Rp. 50000000">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-         </children>
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-      </VBox>
-      <Button layoutX="130.0" layoutY="265.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="460.0" text="Mode Kasir" AnchorPane.bottomAnchor="255.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="285.0">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Button>
-      <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="120.0" spacing="10.0" style="-fx-background-color: red;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1130.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <BorderPane prefHeight="600.0" prefWidth="150.0" style="-fx-background-color: black;">
+            <BorderPane prefHeight="600.0" prefWidth="150.0" style="-fx-background-color: white;">
                <top>
-                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: blue;" BorderPane.alignment="CENTER">
+                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                      <children>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="KasirinYUK">
+                        <Text smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="KasirinYUK">
                            <font>
-                              <Font size="16.0" />
+                              <Font size="22.0" />
                            </font>
                         </Text>
                      </children>
                   </HBox>
                </top>
                <center>
-                  <VBox alignment="TOP_CENTER" prefHeight="373.0" prefWidth="120.0" spacing="15.0" BorderPane.alignment="CENTER">
+                  <VBox alignment="TOP_CENTER" prefHeight="373.0" prefWidth="120.0" spacing="25.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </BorderPane.margin>
                      <children>
-                        <Button alignment="TOP_CENTER" contentDisplay="CENTER" minHeight="26.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="80.0" text="Barang">
+                        <Button fx:id="buttondashboard" alignment="CENTER" minHeight="26.0" mnemonicParsing="false" onAction="#goDashboard" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: white;" text="Dashboard">
                            <font>
-                              <Font size="13.0" />
+                              <Font size="17.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="119.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets top="0.1" />
+                           </padding>
                         </Button>
-                        <Button alignment="TOP_CENTER" contentDisplay="CENTER" minHeight="26.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="80.0" text="Stok">
+                        <Button fx:id="buttonbarang" alignment="CENTER" minHeight="26.0" mnemonicParsing="false" onAction="#goBarang" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: white;" text="Barang">
                            <font>
-                              <Font size="13.0" />
+                              <Font size="20.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="119.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/truck-side.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets top="0.1" />
+                           </padding>
                         </Button>
-                        <Button alignment="TOP_CENTER" contentDisplay="CENTER" minHeight="26.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="80.0" text="Penjualan">
+                        <Button fx:id="buttonlaporan" alignment="CENTER" minHeight="26.0" mnemonicParsing="false" onAction="#goLaporan" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: white;" text="Laporan">
                            <font>
-                              <Font size="13.0" />
+                              <Font size="20.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="119.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/document.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets top="0.1" />
+                           </padding>
                         </Button>
-                        <Button alignment="TOP_CENTER" contentDisplay="CENTER" minHeight="26.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="80.0" text="Laporan">
+                        <Button fx:id="buttonkasir" alignment="CENTER" minHeight="26.0" mnemonicParsing="false" onAction="#goKasir" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: white;" text="Kasir">
                            <font>
-                              <Font size="13.0" />
+                              <Font size="20.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="119.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../img/shopping-cart.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets top="0.1" />
+                           </padding>
                         </Button>
                      </children>
                   </VBox>
                </center>
             </BorderPane>
          </children>
+      </VBox>
+      <VBox layoutX="173.0" layoutY="72.0" prefHeight="222.0" prefWidth="1123.0" spacing="35.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <children>
+            <VBox prefHeight="80.0" prefWidth="460.0" spacing="5.0" style="-fx-background-color: #22c55e; -fx-border-color: black;">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Pendapatan yang didapat hari ini:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="pendataanharian" text="Rp. " textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <HBox fillHeight="false" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="100.0" prefWidth="537.5" spacing="5.0" style="-fx-background-color: #3b82f6; -fx-border-color: black;">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Barang Terlaris Hari Ini">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <ListView fx:id="baranglaris" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox prefHeight="100.0" prefWidth="537.5" spacing="5.0" style="-fx-background-color: #3b82f6; -fx-border-color: black;">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Barang Stok Terendah ">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <ListView fx:id="stokrendah" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+         </padding>
       </VBox>
    </children>
 </AnchorPane>

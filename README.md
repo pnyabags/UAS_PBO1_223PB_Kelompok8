@@ -152,9 +152,11 @@ public abstract class dataUser {
 ### 5. Tabel laporan
 - id_laporan : int(3)
 - id_transaksi : int(3)
-  
+
+## Tampilan Aplikasi
+- Google Dokumen: [GoogleDocs](https://docs.google.com/document/d/1RNku4pEiWBdnHIjhDPk1zvWFHPjkNn1HjUj-5MrBBn4/edit?usp=sharing)
 ## Demo Aplikasi
-Clone: [Github](https://github.com/pnyabags/UAS_PBO1_223PB_Kelompok8.git)
+- Clone: [Github](https://github.com/pnyabags/UAS_PBO1_223PB_Kelompok8.git)
 
 Fakultas Industri Kreatif, Departemen Teknik Informatika,  
 Universitas Teknologi Bandung, 2025

@@ -20,17 +20,19 @@ public class Login{
         String password = passwordField.getText();
         
         UserOperation operasiuser = new UserOperation();
-        User user = operasiuser.Login(username, password);
+        dataUser user = operasiuser.login(username, password);
 
         if (user != null) {
             SessionLogin session = new SessionLogin();
             session.clearSession();
             session.setCurrentUser(user);
             messageLabel.setText("Login successful!");
+            user.displayRole();
             try {
-                if(user.getJabatan().equalsIgnoreCase("admin")){
+                if(user instanceof dataAdmin){
+                    
                     App.setRoot("dashboard");
-                } else if (user.getJabatan().equalsIgnoreCase("staff")) {
+                } else if (user instanceof dataStaff) {
                     App.setRoot("transaksi");
                 }
             } catch (IOException e) {

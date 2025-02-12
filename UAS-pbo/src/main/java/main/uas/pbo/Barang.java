@@ -45,7 +45,7 @@ public class Barang {
     Alert alert = new Alert(Alert.AlertType.INFORMATION);
     
     public void initialize() {
-        User user = SessionLogin.getCurrentUser();
+        dataUser user = SessionLogin.getCurrentUser();
         if (user != null) {
         welcomeLabel.setText("Selamat Datang, " + user.getUsername());
         } else {

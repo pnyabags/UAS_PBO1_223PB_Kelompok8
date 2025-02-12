@@ -1,7 +1,9 @@
 package main.uas.pbo;
+
 import java.sql.*;
+
 public class UserOperation {
-    public User Login(String username, String password) {
+    public dataUser login(String username, String password) {
         String query = "SELECT * FROM user WHERE username = ? AND password = ?";
         try (Connection connection = databaseConnection.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
@@ -11,12 +13,16 @@ public class UserOperation {
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
-                return new User(
-                    resultSet.getInt("id_user"),
-                    resultSet.getString("username"),
-                    resultSet.getString("password"),
-                    resultSet.getString("jabatan")
-                );
+                String jabatan = resultSet.getString("jabatan").toLowerCase();
+                int id = resultSet.getInt("id_user");
+                String user = resultSet.getString("username");
+                String pass = resultSet.getString("password");
+
+                if (jabatan.equals("admin")) {
+                    return new dataAdmin(id, user, pass);
+                } else if (jabatan.equals("staff")) {
+                    return new dataStaff(id, user, pass);
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();

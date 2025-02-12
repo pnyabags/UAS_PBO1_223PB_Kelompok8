@@ -1,12 +1,12 @@
 package main.uas.pbo;
 public class SessionLogin {
-    private static User currentUser;
+    private static dataUser currentUser;
 
-    public void setCurrentUser(User user) {
+    public void setCurrentUser(dataUser user) {
         currentUser = user;
     }
 
-    public static User getCurrentUser() {
+    public static dataUser getCurrentUser() {
         return currentUser;
     }
 

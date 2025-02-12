@@ -1,9 +1,12 @@
 main\uas\pbo\databaseConnection.class
 main\uas\pbo\dataLaporan.class
+main\uas\pbo\dataUser.class
 main\uas\pbo\DashboardOperation.class
 main\uas\pbo\Login.class
 main\uas\pbo\BarangOperation.class
 main\uas\pbo\dataTransaksi.class
+main\uas\pbo\dataAdmin.class
+main\uas\pbo\dataStaff.class
 module-info.class
 main\uas\pbo\TransaksiOperation.class
 main\uas\pbo\Dashboard.class
@@ -16,4 +19,3 @@ main\uas\pbo\dataBarang.class
 main\uas\pbo\LaporanOperation.class
 main\uas\pbo\App.class
 main\uas\pbo\UserOperation.class
-main\uas\pbo\User.class
